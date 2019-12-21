@@ -1,0 +1,23 @@
+package bridgelabzFunctional;
+
+public class EuclideanDistance 
+{
+	public static void main(String[] args) 
+	{
+		sqrt(4);
+	}
+
+	private static void sqrt(int n) 
+	{
+		int t;
+		
+		int sr=n/2;
+		System.out.println(sr);
+		do
+		{
+			t=sr;
+			sr=(t+n/t)/2;
+		}while(t-sr!=0);
+		System.out.println(sr);
+	}
+}

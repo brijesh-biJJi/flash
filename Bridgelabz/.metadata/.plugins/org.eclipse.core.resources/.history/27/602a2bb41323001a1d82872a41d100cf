@@ -1,0 +1,73 @@
+package brudgelabzLogic;
+
+import java.util.Scanner;
+
+public class Gambler 
+{
+	
+	double stake,goal,betprice;
+	int noOfPlay,win;
+	Scanner sc=new Scanner(System.in);
+	public Gambler()
+	{
+		System.out.println("Enter the stake");
+		stake=sc.nextDouble();
+		
+		System.out.println("Enter the goal");
+		goal=sc.nextDouble();
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		Gambler g=new  Gambler();
+		g.playGame();
+		g.diplayResult();
+	}
+	
+	
+
+	private boolean winOrLoss() 
+	{
+		if(Math.random()<0.5)
+			return true;
+		else
+			return false;
+	}
+
+	private void playGame() 
+	{
+		noOfPlay++;
+		System.out.println("Stake : "+stake);
+		System.out.println("Goal : "+goal);
+		System.out.println("Enter the betprice");
+		betprice=sc.nextDouble();
+		
+		if(winOrLoss())
+		{
+			win++;
+			stake+=betprice;
+		}
+		else
+			stake-=betprice;
+		
+		if(stake<0 || stake>=goal)
+			return;
+		else
+			playGame();
+	}
+
+	private void diplayResult() 
+	{
+		System.out.println("Number of play : "+noOfPlay);
+		System.out.println("Number of Win : "+win);
+		System.out.println("Stake : "+stake);
+		System.out.println("Goal : "+goal);
+		System.out.println("BetPrice : "+betprice);
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,39 @@
+package bridgelabzFunctional;
+
+public class Quadratic {
+
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the value for A, B & C ");
+		Utility u=new Utility();
+		double a,b,c,root1,root2;
+		a=u.inputDouble();
+		b=u.inputDouble();
+		c=u.inputDouble();
+		double delta=(b*b)-4*a*c;
+		if(delta>0)
+		{
+			root1=(-b-sqrt(delta))/2*a;
+			root2=(-b+sqrt(delta))/2*a;
+			System.out.println("Root1 = "+root1+" Root2 = "+root2);
+		}
+		else if(delta==0)
+		{
+			double root=-b/(2*a);
+			System.out.println("Delta = 0 "+root);
+		}
+	}
+
+	private static double sqrt(double d) 
+	{
+		double temp,sq;
+		sq=d/2.0;
+		do
+		{
+			temp=sq;
+			sq=(temp+(d/temp))/2;
+		}while(temp-sq!=0);
+		return sq;
+	}
+
+}

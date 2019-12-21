@@ -1,0 +1,38 @@
+package bridgelabzFunctional;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import bridgelabzFunctional.Utility.*;
+
+public class TwoDArray 
+{	
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		PrintWriter pw=new PrintWriter(new OutputStreamWriter(System.out));
+		int r,c;
+		//Utility u=new Utility();
+		System.out.println("Enter the Row And Column");
+		r=sc.nextInt();
+		c=sc.nextInt();
+		int[][] ar=new int[r][c];
+		
+		System.out.println("Enter the Value for Row and Col");
+		for(int i=0;i<r;i++)
+			for(int j=0;j<c;j++)
+				ar[i][j]=sc.nextInt();
+		
+		
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				System.out.println("print"+ar[i][j]);
+				pw.print(ar[i][j]+" ");
+			}
+			pw.println();
+		}
+	}
+
+}

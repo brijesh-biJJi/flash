@@ -1,0 +1,31 @@
+package bridgelabzBasic;
+import java.util.*;
+public class PowerOfTwo 
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		System.out.println("Entert the range");
+		int n=sc.nextInt();
+		if(n<=0 && n>31)
+		{	
+			System.out.println("Range must be within 31");
+			return ;
+		}
+		for(int i=0;i<n;i++)
+		{
+			int pot=powerOfTwo(2,i);
+			System.out.println(pot);
+		}
+	}
+	private static int powerOfTwo(int n, int p) 
+	{
+		int res=1;
+		while(p>0)
+		{
+			res=n*p;
+			p--;
+		}
+		return res;
+	}
+}
